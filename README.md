@@ -15,3 +15,4 @@ Se dispondrá de 1,5 horas para la realización de la prueba. Se dará un aviso 
     5. Añadir un botón que pare la sucesión de imágenes.
     6. Añadir un segundo botón que vuelva a iniciar la sucesión de imágenes.
     7. Salvar el documento y las imágenes en una carpeta con el nombre “UF1305_E2_nombre_apellido”.
+   ![til](./media/js-diapositivas.gif)
