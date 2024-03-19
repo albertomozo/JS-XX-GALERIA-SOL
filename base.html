@@ -14,8 +14,9 @@ h1,h2,h3 {
 	background-color:antiquewhite;
 	padding: 20px;
 	width: 700px;
-	margin-right: auto;
-	margin-left: auto;
+/* 	margin-right: auto;
+	margin-left: auto; */
+    margin: 0 auto;
 }
 .rojo {
 	color: #F00;
@@ -61,28 +62,29 @@ pre {
 
 
 
-<h1>Galeria</h1>
-<h2>Diapositiva Slider</h2>
-<p>Un único botones para empezar y parar una galeria de diapositivas</p>
-<div id="botonera">
-    <div class="barra">
-        <button id="btn-diapositiva" onclick="onOf()" class="botonera">EMPEZAR</button>
-        <table id="tablaId">
-       
-        </table>
+    <h1>Galeria</h1>
+    <h2>Diapositiva Slider</h2>
+    <p>Un único botones para empezar y parar una galeria de diapositivas</p>
+    <div id="botonera">
+        <div class="barra">
+            <button id="btn-diapositiva" onclick="on()" class="botonera">EMPEZAR</button>
+            <button id="btn-diapositiva-apagar" onclick="of()" class="botonera">PARAR</button>
+            <table id="tablaId">
+        
+            </table>
+        </div>
+
+
     </div>
 
 
-</div>
+    <br><br>
+    <div id="galeria">
 
+        <img id="foto" width="100%" >
+        <h3 id="fotoTitulo"></h3>
 
-<br><br>
-<div id="galeria">
-
-    <img id="foto" src="img/foto01.jpg" width="100%" >
-    <h3 id="fotoTitulo">Titulo</h3>
-
-</div>
+    </div>
 
 </div>
 <script>
@@ -90,8 +92,8 @@ pre {
     let botones = '';
     let diapo;
     //const galeria = ['foto01.jpg', 'foto02.jpg', 'foto03.jpg', 'foto04.jpg'];
-    const galeria = ['hortensia.jpg', 'koala.jpg', 'paisaje.jpg', 'pinguinos.jpg'];
-    const galeriaTexto = ['hortensia Azul', 'koala Australiano', 'Paisaje', 'Pingüinos bailando'];
+    const galeria = ['hortensia.jpg', 'koala.jpg', 'paisaje.jpg', 'pinguinos.jpg','foto01.jpg',];
+    const galeriaTexto = ['hortensia Azul', 'koala Australiano', 'Paisaje', 'Pingüinos bailando','Habitación'];
     var numero = galeria.length;
     var pos = 0;
     var segundosTimeout = 2000;
@@ -103,9 +105,35 @@ pre {
     document.getElementById("foto").src = `img/${galeria[0]}`;
     document.getElementById("fotoTitulo").innerHTML = galeriaTexto[0]; 
     var testigo = '<tr>';
-    for (var i=0; i<numero;i++) { testigo += `<td id="c${i}" class="circulo">${i+1}</td>`;}
+    for (var i=0; i<numero;i++) { 
+        testigo += `<td id="c${i}" class="circulo">${i+1}</td>`;
+    }
     testigo += '</tr>';
     document.getElementById('tablaId').innerHTML=testigo + '</div>';
+
+
+    function on(){
+        diapo = setInterval(cambiar,segundosTimeout);
+    }
+
+    function cambiar(){
+        document.getElementById('foto').src=`img/${galeria[pos]}`;
+        console.log(pos);
+        //pos = pos +1;
+        //if (pos > numero-1) {pos = 0;} 
+        for (var i=0; i<numero; i++) {
+            document.getElementById(`c${i}`).style.backgroundColor='transparent';
+        }
+        document.getElementById(`c${pos}`).style.backgroundColor='green';
+        pos = (pos +1) % numero;
+       
+    }
+
+    function of(){
+    clearInterval(diapo);
+    }
+
+
 
     
     
