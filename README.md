@@ -1,27 +1,32 @@
 
 
-# Enunciado prueba
-Crear con el editor de texto, una página web que contenga una imagen que vaya cambiando automáticamente cada cierto tiempo, siguiendo las instrucciones que se indican más abajo. La página con él script se deberá ver correctamente en el navegador Chrome.
-Se dispondrá de 1,5 horas para la realización de la prueba. Se dará un aviso 15 minutos antes de la finalización del tiempo.
+# Soluciones a la prueba de JS (GALERIA)
 
-## Instrucciones
-    1. Crear un documento HTML que contenga la estructura básica (Etiquetas: Tipo de documento, html, head, charset y body). Nombrarlo como “script-imagen.html”.
+# base.html 
+Solución sencilla con 2 botones.
+# 01-galeria-00.html
+Solución con un  boton
+# 01-galeria-01.html
+listaner paara el boton
+# 01-galeria-02.html
+usando querySelectorAll 
+# 01-galeria-03.html
+usando solo querySelectorAll
+# 01-galeria-04.html
+Listeners con for 
 
-    2. En el nuevo documento se debe:
-        a. Colocar la imagen “foto1.jpg”.
+# 02-galeria-importada
+Tomamos esta gaeria de internet y vamos a intentar modificarla.
+# 02-galeria-importada_00.html  
+versión adaptada de https://www.aulascript.com/ejemplos/scripts/carruselimg.htm
+# 02-galeria-importada_01.html : Añadimos boton de parar
 
-        b. Hacer que la imagen sea sustituida automáticamente por una nueva imagen. (Para ello se debe extraer, incluir y adaptar el código necesario del documento “base.html”).
 
-    (Tanto las imágenes como el documento “base.html” se encuentra en la carpeta “material” proporcionada por el docente)
+Al analizar el código vemosque usa  los objetos de una manera que no conocemos, por lo que a pesar de la sencillez que aparentaba, vamos a analizar el sistema que usa.
 
-    3. El script debe mostrar sucesivamente en el navegador las cuatro imágenes que se encuentran en la carpeta “material”
+Extensión del DOM.
 
-    4. Una vez conseguido que el script vaya mostrando las imágenes, aumentar el lapso de tiempo entre imágenes hasta 7 segundos.
 
-    5. Añadir un botón que pare la sucesión de imágenes.
 
-    6. Añadir un segundo botón que vuelva a iniciar la sucesión de imágenes.
 
-    7. Salvar el documento y las imágenes en una carpeta con el nombre “UF1305_E2_nombre_apellido”.
-    
-   ![til](./media/js-diapositivas.gif)
+
