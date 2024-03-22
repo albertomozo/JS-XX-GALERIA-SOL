@@ -48,6 +48,19 @@ pre {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+.circuloActivo {
+    visibility: visible;
+    background-color: blueviolet;
+    color : white;
+    border: 2px solid  red;
+  
+
+}
+
+.circuloOculto {
+    visibility:hidden;
+}
 #fotoTitulo{
     text-align: center;
     font-size: 20px;
@@ -95,7 +108,7 @@ pre {
     const galeria = ['hortensia.jpg', 'koala.jpg', 'paisaje.jpg', 'pinguinos.jpg','foto01.jpg',];
     const galeriaTexto = ['hortensia Azul', 'koala Australiano', 'Paisaje', 'Pingüinos bailando','Habitación'];
     var numero = galeria.length;
-    var pos = 2; // posicion de la imagen incial
+    var pos = 3; // posicion de la imagen incial
     var segundosTimeout = 2000;
     // cargamos primera foto de galeria
     if (pos > numero-1) {pos = numero-1;} // si lapos es mayor que el numero de elementos, mostramos la ultima imagen
@@ -107,9 +120,9 @@ pre {
     for (var i=0; i<numero;i++) {
         if (i==pos) 
         {
-            testigo += `<td id="c${i}" class="circulo" style="background-color:green">${i+1}</td>`;
+            testigo += `<td id="c${i}" class="circulo circuloActivo" >${i+1}</td>`;
         } else {
-            testigo += `<td id="c${i}" class="circulo">${i+1}</td>`;
+            testigo += `<td id="c${i}" class="circulo circuloOculto">${i+1}</td>`;
         }
     }
     testigo += '</tr>';
@@ -153,8 +166,13 @@ pre {
         document.getElementById('foto').src=`img/${galeria[pos]}`; //cambio imagen 
         console.log(pos);
         let circulos = document.querySelectorAll(".circulo");
-        circulos.forEach(circulo => { circulo.style.backgroundColor = 'transparent'; });
-        document.getElementById(`c${pos}`).style.backgroundColor='blue';
+        circulos.forEach(circulo => { 
+            circulo.classList.remove('circuloActivo'); 
+            circulo.classList.add('circuloOculto');
+    
+        });
+        circulos[pos].classList.add("circuloActivo");
+        circulos[pos].classList.remove("circuloOculto");
         pos = (pos +1) % numero;
        
     }

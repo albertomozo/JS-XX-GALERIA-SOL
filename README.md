@@ -14,6 +14,8 @@ usando querySelectorAll
 usando solo querySelectorAll
 # 01-galeria-04.html
 Listeners con for 
+# 01-galeria-05.html
+Listeners con classList.add()  
 
 # 02-galeria-importada
 Tomamos esta gaeria de internet y vamos a intentar modificarla.

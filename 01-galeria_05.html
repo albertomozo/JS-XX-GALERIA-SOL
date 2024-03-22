@@ -153,8 +153,10 @@ pre {
         document.getElementById('foto').src=`img/${galeria[pos]}`; //cambio imagen 
         console.log(pos);
         let circulos = document.querySelectorAll(".circulo");
-        circulos.forEach(circulo => { circulo.style.backgroundColor = 'transparent'; });
+        circulos.forEach(circulo => { circulo.style.visibility = 'hidden'; });
         document.getElementById(`c${pos}`).style.backgroundColor='blue';
+        document.getElementById(`c${pos}`).style.visibility='visible';
+        document.getElementById(`c${pos}`).style.color='white';
         pos = (pos +1) % numero;
        
     }
